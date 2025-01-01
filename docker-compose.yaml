@@ -1,0 +1,6 @@
+services:
+  server:
+    build: 
+      context: ./server/
+    ports:
+      - 2222:22
