@@ -1,5 +1,7 @@
+import json.tool
 import paramiko
 import re
+import json
 from typing import Self
 
 class ServerClientMonitor:
@@ -46,6 +48,22 @@ class ServerClientMonitor:
         }
 
         return out
+    def send_cpu(self)->dict:
+        """
+        this method is a wrapper for the 'mpstat' linux command of 'sysstat'
+        """
+        stdin , out, er = self._conn.exec_command("mpstat -o JSON")
+
+        error = er.read().decode()
+
+        if error:
+            raise ConnectionError(error)
+        
+        ret = json.loads(out.read().decode())['sysstat']['hosts'][-1]['statistics'][-1]['cpu-load'][-1]
+
+        stdin.close(), out.close(), er.close()
+
+        return ret
 
     def __del__(self):
         self._conn.close()

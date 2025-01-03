@@ -8,7 +8,29 @@ class TestServerClientMonitor(unittest.TestCase):
     def test_send_ram(self):
         client = ServerClientMonitor.from_user_password('127.0.0.1','root','root',2222)
 
-        self.assertListEqual(list( client.send_ram().keys()),['total', 'used', 'free', 'shared', 'buff/cache', 'available'])
+        self.assertListEqual(list( client.send_ram().keys()),[
+            'total',
+            'used',
+            'free',
+            'shared',
+            'buff/cache',
+            'available'])
+
+    def test_send_cpu(self):
+        client = ServerClientMonitor.from_user_password('127.0.0.1','root','root',2222)
+
+        self.assertListEqual(list(client.send_cpu().keys()),[
+            'cpu',
+            'usr',
+            'nice',
+            'sys',
+            'iowait',
+            'irq',
+            'soft',
+            'steal',
+            'guest',
+            'gnice',
+            'idle'])
         
 
 

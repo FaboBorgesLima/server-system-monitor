@@ -1,6 +1,6 @@
 # Server System Monitor
 
-This is package can monitor a server ping and memory using SSH, but in a short time it will be able to monitor CPU usage and disk usage.
+This is package can monitor a server ping, CPU and memory using SSH, but in a short time it will be able to monitor disk usage.
 
 All of the methods are wrappers to common Linux commands like:
 
@@ -27,6 +27,7 @@ ssh user@example.com "free"
 | command | wrapper  |
 | ------- | -------- |
 | free    | send_ram |
+| mpstat  | send_cpu |
 
 ## Quick usage
 
