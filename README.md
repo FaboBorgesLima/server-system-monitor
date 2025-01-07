@@ -62,3 +62,7 @@ ping = connection_monitor.get_ping()
 print(ram)
 print(ping)
 ```
+
+## License
+
+The server-system-monitor library is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

@@ -1,7 +1,7 @@
 
 [project]
 
-name = 'server_system_monitor'
+name = 'server_system_monitor_FaboBorgesLima'
 
 readme = "README.md"
 
@@ -31,3 +31,10 @@ test = ["coverage"]
 where = ["."]  # list of folders that contain the packages (["."] by default)
 include = ["server_system_monitor"]  # package names should match these glob patterns (["*"] by default)
 exclude = ["server"]  
+classifiers = [
+  "Intended Audience :: Developers",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
