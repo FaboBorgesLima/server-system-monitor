@@ -19,7 +19,7 @@ class TestServerClientMonitor(unittest.TestCase):
     def test_send_cpu(self):
         client = ServerClientMonitor.from_user_password('127.0.0.1','root','root',2222)
 
-        self.assertListEqual(list(client.send_cpu().keys()),[
+        self.assertListEqual(list(client.send_stats().keys()),[
             'cpu',
             'usr',
             'nice',
