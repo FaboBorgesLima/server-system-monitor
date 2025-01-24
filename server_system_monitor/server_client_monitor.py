@@ -48,9 +48,27 @@ class ServerClientMonitor:
         }
 
         return out
-    def send_cpu(self)->dict:
+    
+
+    def send_stats(self)->dict:
         """
-        this method is a wrapper for the 'mpstat' linux command of 'sysstat'
+        this method is a wrapper for the 'mpstat' linux command of 'sysstat'.
+
+        returns a dict like:
+        ```python
+        {
+            'cpu':float,
+            'usr':float,
+            'nice':float,
+            'sys':float,
+            'iowait':float,
+            'irq':float,
+            'soft':float,
+            'steal':float,
+            'guest':float,
+            'gnice':float,
+            'idle':float,
+        }
         """
         stdin , out, er = self._conn.exec_command("mpstat -o JSON")
 
@@ -63,7 +81,7 @@ class ServerClientMonitor:
 
         stdin.close(), out.close(), er.close()
 
-        return ret
+        return ret     
 
     def __del__(self):
         self._conn.close()
