@@ -1,7 +1,7 @@
 
 [project]
 
-name = 'server_system_monitor_FaboBorgesLima'
+name = 'server_system_monitor'
 
 readme = "README.md"
 
@@ -21,6 +21,14 @@ version = '0.1.0'
 
 description = 'A server system monitor for linux to linux'
 
+classifiers = [
+  "Intended Audience :: Developers",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+]
+
+license = {file = "LICENSE"}
+
 [project.optional-dependencies]
 
 dev = ["check-manifest"]
@@ -28,13 +36,6 @@ test = ["coverage"]
 
 [tool.setuptools.packages.find]
 
-where = ["."]  # list of folders that contain the packages (["."] by default)
-include = ["server_system_monitor"]  # package names should match these glob patterns (["*"] by default)
+where = ["."]  
+include = ["server_system_monitor"] 
 exclude = ["server"]  
-classifiers = [
-  "Intended Audience :: Developers",
-  "Operating System :: POSIX :: Linux",
-  "Programming Language :: Python :: 3",
-]
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
