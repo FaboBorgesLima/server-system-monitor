@@ -27,3 +27,9 @@ class ConnectionMonitor:
             "avg":float(response_time_line[1]),
             "max":float(response_time_line[2]),
         }
+
+    def get_hostname(self)->str:
+        """
+        this method returns the hostname of the connection
+        """
+        return self.__hostname
